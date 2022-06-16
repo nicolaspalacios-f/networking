@@ -15,18 +15,16 @@ LOC/H = 19
 
 Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpServerController
 
+Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/index.html
+
 ### Diagrama de Clases
 
 <img src="imagen\imagen.png">  
  
- En el diagrama de clases vemos la clase httpServer, en esta estan los metodos Lector_archivos, agregarALista, media, desviacion y el main.
+ En el diagrama de clases vemos la clase httpServer, y httpServer controller.
 
-agregarALista agrega a una linked list las lineas del archivo y devuelve este linked list, Lector_archivos es el metodo que lee el archivo, este invoca a agregarALista y la linkedlist de este, media calcula la media de la linked list dada, y desviacion calcula la desviacion de la linked list y finalmente main es el metodo que invoca a lector_archivos.
+httpServer es el funcionamiento del server y controller la que la invoca
 
-### Tests
-
-Se realizan test por los 4 metodos principales, media, desviacion, lector_archivos y agregarALista.
-<img src="imagen\tests.png">
 
 ### Documentacion
 
@@ -40,8 +38,11 @@ Para ver la documentacion, se debe realizar el comando mvn javadoc:javadoc, lueg
 | | |\_\_**java
 | | | |\_**\_edu
 | | | | |\_\_**escuelaing
-| | | | | |\_**\_app
-| | | | | | |App.java
+| | | | | |\_**\_arsw
+| | | | | | |\_**\_ASE
+| | | | | | | |\_**\_app
+| | | | | | | | |HttpServer.java
+| | | | | | | | |HttpServerController.java
 | |\_\_**test
 | | |\_**\_java
 | | | |\_\_**edu
