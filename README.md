@@ -6,19 +6,20 @@
 
 ### En que consiste el proyecto?
 
-El proyecto consiste en la creacion de un programa el cual permita obtener la media y la desviacion estandar de un archivo especificado mediante el uso de linked list, este proyecto fue realizado en 3 horas con un total de 224 lineas.
+El proyecto consiste en la creacion un servidor web que soporte multiples solicitudes seguidas (no concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo
+paginas html e imagenes. este proyecto fue realizado en 10 horas con un total de 190 lineas.
 
-_LOC/H = 74.67_
+LOC/H = 19
 
-Este programa solo admite 1 argumento, indicando la direccion del archivo a utilizar.
 
-Comando utilizado: java -cp "target/classes" co.edu.escuelaing.Lector src\main\java\co\edu\escuelaing\prueba\prueba.txt
+
+Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpServerController
 
 ### Diagrama de Clases
 
 <img src="imagen\imagen.png">  
  
- En el diagrama de clases vemos la clase Lector, en esta estan los metodos Lector_archivos, agregarALista, media, desviacion y el main.
+ En el diagrama de clases vemos la clase httpServer, en esta estan los metodos Lector_archivos, agregarALista, media, desviacion y el main.
 
 agregarALista agrega a una linked list las lineas del archivo y devuelve este linked list, Lector_archivos es el metodo que lee el archivo, este invoca a agregarALista y la linkedlist de este, media calcula la media de la linked list dada, y desviacion calcula la desviacion de la linked list y finalmente main es el metodo que invoca a lector_archivos.
 

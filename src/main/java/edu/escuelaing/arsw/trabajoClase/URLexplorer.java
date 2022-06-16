@@ -1,4 +1,4 @@
-package edu.escuelaing.arsw.ASE.app;
+package edu.escuelaing.arsw.trabajoClase;
 
 import java.net.MalformedURLException;
 import java.net.URL;
