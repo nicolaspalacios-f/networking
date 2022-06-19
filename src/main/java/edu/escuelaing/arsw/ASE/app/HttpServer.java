@@ -8,7 +8,7 @@ import java.io.*;
 
 public class HttpServer {
 
-    private boolean esPath = true;
+    private static boolean esPath = true;
     private static HttpServer instance = new HttpServer();
 
     public static HttpServer getInstance() {
@@ -18,23 +18,12 @@ public class HttpServer {
     public void start() throws IOException {
         ServerSocket serverSocket = iniciarServidor();
         String bandera = "a";
+        ExecutorService pool = Executors.newFixedThreadPool(7);
         while (bandera != "exit") {
             Socket clientSocket = activarSocket(serverSocket);
+            RequestProcessor processor = new RequestProcessor(clientSocket);
+            pool.execute(processor);
 
-            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(
-                            clientSocket.getInputStream()));
-
-            respuesta(request(in), clientSocket);
-
-            out.println("outputline");
-
-            out.close();
-
-            in.close();
-
-            clientSocket.close();
         }
         serverSocket.close();
 
@@ -63,7 +52,7 @@ public class HttpServer {
         return clientSocket;
     }
 
-    private void respuesta(String url, Socket socket) throws IOException {
+    public static void respuesta(String url, Socket socket) throws IOException {
         String tipo = url.substring(url.indexOf(".") + 1);
         File file = new File(url);
         PrintWriter out;
@@ -77,7 +66,7 @@ public class HttpServer {
 
     }
 
-    private void tipoArchivo(String tipo, Socket clientSocket, File archivo) throws IOException {
+    private static void tipoArchivo(String tipo, Socket clientSocket, File archivo) throws IOException {
 
         if (tipo.equals("png") || tipo.equals("jpg") || tipo.equals("gif")
                 || tipo.equals("jpeg")) {
@@ -87,7 +76,7 @@ public class HttpServer {
         }
     }
 
-    private String binario(String tipo, Socket clientSocket, File archivo) throws IOException {
+    private static String binario(String tipo, Socket clientSocket, File archivo) throws IOException {
         String outputLine = "";
         byte[] imagen = leerImagen(archivo);
         DataOutputStream binario = new DataOutputStream(clientSocket.getOutputStream());
@@ -103,7 +92,7 @@ public class HttpServer {
         return outputLine;
     }
 
-    private String archivos(String tipo, Socket clientSocket, File archivo) throws IOException {
+    private static String archivos(String tipo, Socket clientSocket, File archivo) throws IOException {
         String outputLine = "";
         PrintWriter out;
         out = new PrintWriter(clientSocket.getOutputStream(), true);
@@ -116,7 +105,7 @@ public class HttpServer {
         return outputLine;
     }
 
-    private String leerArchivo(File archivo) throws FileNotFoundException {
+    private static String leerArchivo(File archivo) throws FileNotFoundException {
         try (Scanner scanne = new Scanner(archivo)) {
             String lista = new String();
             while (scanne.hasNextLine()) {
@@ -129,7 +118,7 @@ public class HttpServer {
         }
     }
 
-    private byte[] leerImagen(File archivo) throws IOException {
+    private static byte[] leerImagen(File archivo) throws IOException {
         try {
             FileInputStream inputImage = new FileInputStream(archivo);
             byte[] bytes = new byte[(int) archivo.length()];
@@ -143,7 +132,7 @@ public class HttpServer {
 
     }
 
-    private String request(BufferedReader in) throws IOException {
+    public static String request(BufferedReader in) throws IOException {
         String path = "";
         String inputLine = "";
         while ((inputLine = in.readLine()) != null) {
@@ -162,7 +151,7 @@ public class HttpServer {
         return path;
     }
 
-    private String errors(int tipo) {
+    private static String errors(int tipo) {
         String respuesta = "";
         if (tipo == 404) {
             respuesta = "HTTP/1.1 404 Not Found\r\n\r\n"
