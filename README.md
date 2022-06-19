@@ -2,18 +2,19 @@
 
 ## Nicolas Palacios
 
-## 14/06/2022
+## 18/06/2022
 
 ### En que consiste el proyecto?
 
-El proyecto consiste en la creacion un servidor web que soporte multiples solicitudes seguidas (no concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo
-paginas html e imagenes. este proyecto fue realizado en 10 horas con un total de 190 lineas.
+El proyecto consiste en la creacion un servidor web que soporte multiples solicitudes seguidas concurrentes. El servidor debe retornar todos los archivos solicitados, incluyendo
+paginas html e imagenes. este proyecto fue realizado en 6 horas con un total de 240 lineas.
 
-LOC/H = 19
+LOC/H = 24
 
 
 
 Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpServerController
+                   java -cp "target\classes" edu.escuelaing.arsw.ASE.app.ClienteMultiHilos 2 en el caso de usar concurrencia.
 
 Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/index.html
 
@@ -21,9 +22,11 @@ Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/i
 
 <img src="imagen\imagen.png">  
  
- En el diagrama de clases vemos la clase httpServer, y httpServer controller.
+ En el diagrama de clases vemos la clase httpServer, httpServer controller.
 
 httpServer es el funcionamiento del server y controller la que la invoca
+
+De igual manera vemos requestProcessor MultiHilosProcessor y ClienteMultiHilos, estos enfocados netamente en concurrencia.
 
 
 ### Documentacion
@@ -43,6 +46,9 @@ Para ver la documentacion, se debe realizar el comando mvn javadoc:javadoc, lueg
 | | | | | | | |\_**\_app
 | | | | | | | | |HttpServer.java
 | | | | | | | | |HttpServerController.java
+| | | | | | | | |ClienteMultiHilos.java
+| | | | | | | | |MultiHilosProcessor.java
+| | | | | | | | |RequestProcessor.java
 | |\_\_**test
 | | |\_**\_java
 | | | |\_\_**edu
