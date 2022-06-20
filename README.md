@@ -15,6 +15,8 @@ Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpSer
 java -cp "target\classes" edu.escuelaing.arsw.ASE.app.ClienteMultiHilos 2 en el caso de usar concurrencia.
 
 Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/index.html
+El link de heroku es el siguiente:
+https://servidorwebarsw.herokuapp.com/gana/index.html
 <img src= imagen\imagen2.png>
 
 Por cada peticion saldra el hilo en el que se realiza, junto con la informacion de la peticion.
