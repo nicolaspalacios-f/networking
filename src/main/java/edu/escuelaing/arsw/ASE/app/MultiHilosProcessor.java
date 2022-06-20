@@ -15,7 +15,7 @@ public class MultiHilosProcessor implements Runnable {
 
     @Override
     public void run() {
-        Socket echoSocket = reconexion();
+        Socket echoSocket = conectarSocket();
         PrintWriter out = null;
         try {
             echoSocket = new Socket("localhost", port);
@@ -28,7 +28,7 @@ public class MultiHilosProcessor implements Runnable {
         out.close();
     }
 
-    private Socket reconexion() {
+    private Socket conectarSocket() {
         Socket echoSocket = null;
         try {
             echoSocket = new Socket("127.0.0.1", port);
@@ -36,7 +36,7 @@ public class MultiHilosProcessor implements Runnable {
             System.err.println("Error en el host");
             System.exit(1);
         } catch (IOException e) {
-            return reconexion();
+            return conectarSocket();
         }
         return echoSocket;
     }
