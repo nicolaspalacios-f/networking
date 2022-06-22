@@ -23,9 +23,7 @@ Por cada peticion saldra el hilo en el que se realiza, junto con la informacion 
 
 <img src= imagen\imagen3.png>
 
-En el caso del cliente multihilos dara lo siguiente.
 
-<img src= imagen\imagen4.png>
 
 ### Diagrama de Clases
 
