@@ -12,6 +12,7 @@ paginas html e imagenes. este proyecto fue realizado en 6 horas con un total de 
 LOC/H = 24
 
 Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpServerController
+
 java -cp "target\classes" edu.escuelaing.arsw.ASE.app.ClienteMultiHilos 2 en el caso de usar concurrencia.
 
 Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/index.html
@@ -41,23 +42,23 @@ Para ver la documentacion, se debe realizar el comando mvn javadoc:javadoc, lueg
 
 ### Estructura de archivos
 
-|\_**\_pom.xml
-|\_\_**src
-| |\_**\_main
-| | |\_\_**java
-| | | |\_**\_edu
-| | | | |\_\_**escuelaing
-| | | | | |\_**\_arsw
-| | | | | | |\_**\_ASE
-| | | | | | | |\_**\_app
-| | | | | | | | |HttpServer.java
-| | | | | | | | |HttpServerController.java
-| | | | | | | | |ClienteMultiHilos.java
-| | | | | | | | |MultiHilosProcessor.java
-| | | | | | | | |RequestProcessor.java
-| |\_\_**test
-| | |\_**\_java
-| | | |\_\_**edu
-| | | | |\_**\_escuelaing
-| | | | | |\_\_**app
+|\_**\_pom.xml  
+|\_\_**src  
+| |\_**\_main  
+| | |\_\_**java  
+| | | |\_**\_edu  
+| | | | |\_\_**escuelaing  
+| | | | | |\_**\_arsw  
+| | | | | | |\_**\_ASE  
+| | | | | | | |\_**\_app  
+| | | | | | | | |HttpServer.java  
+| | | | | | | | |HttpServerController.java  
+| | | | | | | | |ClienteMultiHilos.java  
+| | | | | | | | |MultiHilosProcessor.java  
+| | | | | | | | |RequestProcessor.java  
+| |\_\_**test  
+| | |\_**\_java  
+| | | |\_\_**edu  
+| | | | |\_**\_escuelaing  
+| | | | | |\_\_**app  
 | | | | | | |\_\_\_\_AppTest.java
