@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <h2>Get method</h2>
+  <form>
+    <label for="name">name:</label><br />
+    <input type="text" id="nameGet" name="nameGet" /><br />
+    <button type="button" onclick="updateGet()  ">Submit</button>
+  </form>
+
+  <script>
+    function updateGet() {
+      name = document.getElementsByName("nameGet")[0].value;
+      document.getElementById("getMethod").innerHTML = name;
+    }
+
+    function updatePost() {
+      name = document.getElementsByName("namePost")[0].value;
+      document.getElementById("postMethod").innerHTML = name;
+    }
+  </script>
+
+  <h2>Post method</h2>
+  <form>
+    <label for="name">name:</label><br />
+    <input type="text" id="namePost" name="namePost" /><br />
+    <button type="button" onclick="updatePost()">Submit</button>
+  </form>
+  <div id="postMethod" style="color: rgb(8, 34, 179); font-size: 40px"></div>
+  <div id="getMethod" style="color: green; font-size: 40px"></div>
+</html>

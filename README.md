@@ -2,7 +2,7 @@
 
 ## Nicolas Palacios
 
-## 18/06/2022
+## 19/08/2022
 
 ### En que consiste el proyecto?
 
@@ -23,8 +23,6 @@ https://servidorwebarsw.herokuapp.com/gana/index.html
 Por cada peticion saldra el hilo en el que se realiza, junto con la informacion de la peticion.
 
 <img src= imagen\imagen3.png>
-
-
 
 ### Diagrama de Clases
 
