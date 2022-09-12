@@ -6,18 +6,16 @@
 
 ### En que consiste el proyecto?
 
-El proyecto consiste en la creacion un servidor web que soporte multiples solicitudes seguidas concurrentes. El servidor debe retornar todos los archivos solicitados, incluyendo
-paginas html e imagenes. este proyecto fue realizado en 6 horas con un total de 240 lineas.
-
-LOC/H = 24
+El proyecto consiste en la creacion un framework web que soporte multiples solicitudes seguidas concurrentes. El servidor debe retornar todos los archivos solicitados, incluyendo
+paginas html e imagenes.
 
 Comando utilizado: java -cp "target/classes" edu.escuelaing.arsw.ASE.app.HttpServerController
 
 java -cp "target\classes" edu.escuelaing.arsw.ASE.app.ClienteMultiHilos 2 en el caso de usar concurrencia.
 
-Para ingresar a la pagina principal se ingresara a http://localhost:35000/gana/index.html
+Para ingresar a la pagina principal se ingresara a http://localhost:35000/home.html
 El link de heroku es el siguiente:
-https://servidorwebarsw.herokuapp.com/gana/index.html
+https://servidorwebarsw.herokuapp.com/home.html
 <img src= imagen\imagen2.png>
 
 Por cada peticion saldra el hilo en el que se realiza, junto con la informacion de la peticion.
@@ -57,6 +55,6 @@ Para ver la documentacion, se debe realizar el comando mvn javadoc:javadoc, lueg
 | |\_\_**test  
 | | |\_**\_java  
 | | | |\_\_**edu  
-| | | | |\_**\_escuelaing  
-| | | | | |\_\_**app  
+| | | | |\_\*\*\_escuelaing  
+| | | | | |\_\_\*\*app  
 | | | | | | |\_\_\_\_AppTest.java
