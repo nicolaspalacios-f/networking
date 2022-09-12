@@ -1,8 +1,8 @@
-# Taller networking ARSW
+# Taller networking AREP
 
 ## Nicolas Palacios
 
-## 19/08/2022
+## 19/09/2022
 
 ### En que consiste el proyecto?
 
